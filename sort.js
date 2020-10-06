@@ -31,9 +31,12 @@ Array.prototype.quickSort = function quickSort() {
 */
 
 Array.prototype.mergeSort = function mergeSort() {
+    if (this.length <= 1) return this;
     const midIndex = Math.floor(this.length / 2);
     const left = this.slice(0, midIndex);
     const right = this.slice(midIndex);
+
+    return merge(mergeSort.call(left), mergeSort.call(right));
 };
 
 const arr = [1, -1, 999, 3, 2];
