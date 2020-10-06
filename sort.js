@@ -36,6 +36,12 @@ function merge(left, right) {
         left[0] < right[0] ? res.push(left.shift()) : res.push(right.shift());
     }
 
+    while (left.length) {
+        res.push(left.shift());
+    }
+    while (right.length) {
+        res.push(right.shift());
+    }
 }
 
 Array.prototype.mergeSort = function mergeSort() {
