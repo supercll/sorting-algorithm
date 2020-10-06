@@ -22,6 +22,14 @@ Array.prototype.quickSort = function quickSort() {
     return quickSort.call(left).concat(mid, quickSort.call(right));
 };
 
+// 分治排序
+/* 
+思路：
+    和快排同样为递归分治
+    不过分治的不同在于是在合并的时候排序
+    而快排是在分的时候排序
+*/
+
 const arr = [1, -1, 999, 3, 2];
 
 console.log(arr.quickSort());
