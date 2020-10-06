@@ -25,10 +25,16 @@ Array.prototype.quickSort = function quickSort() {
 // 分治排序
 /* 
 思路：
-    和快排同样为递归分治
+    和快排同样为递归分治思想
     不过分治的不同在于是在合并的时候排序
     而快排是在分的时候排序
 */
+
+Array.prototype.mergeSort = function mergeSort() {
+    const midIndex = Math.floor(this.length / 2);
+    const left = this.slice(0, midIndex);
+    const right = this.slice(midIndex);
+};
 
 const arr = [1, -1, 999, 3, 2];
 
