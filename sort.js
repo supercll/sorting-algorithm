@@ -30,6 +30,14 @@ Array.prototype.quickSort = function quickSort() {
     而快排是在分的时候排序
 */
 
+function merge(left, right) {
+    const res = [];
+    while (left.length && right.length) {
+        left[0] < right[0] ? res.push(left.shift()) : res.push(right.shift());
+    }
+
+}
+
 Array.prototype.mergeSort = function mergeSort() {
     if (this.length <= 1) return this;
     const midIndex = Math.floor(this.length / 2);
