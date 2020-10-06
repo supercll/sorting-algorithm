@@ -7,6 +7,7 @@
 */
 
 Array.prototype.quickSort = function quickSort() {
+    if (this.length <= 1) return this;
     const midIndex = Math.floor(this.length / 2);
     const mid = this.splice(midIndex, 1);
 
@@ -17,6 +18,7 @@ Array.prototype.quickSort = function quickSort() {
         let item = this[i];
         item < mid ? left.push(item) : right.push(item);
     }
+    return quickSort.call(left).concat(mid, quickSort.call(right));
 };
 
 const arr = [1, -1, 999, 3, 2];
