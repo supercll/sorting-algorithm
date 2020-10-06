@@ -7,15 +7,16 @@
 */
 
 Array.prototype.quickSort = function quickSort() {
+    const _this = new Array(...this);
     if (this.length <= 1) return this;
     const midIndex = Math.floor(this.length / 2);
-    const mid = this.splice(midIndex, 1);
+    const mid = _this.splice(midIndex, 1);
 
     const left = [];
     const right = [];
 
-    for (let i = 0; i < this.length; i++) {
-        let item = this[i];
+    for (let i = 0; i < _this.length; i++) {
+        let item = _this[i];
         item < mid ? left.push(item) : right.push(item);
     }
     return quickSort.call(left).concat(mid, quickSort.call(right));
@@ -24,3 +25,4 @@ Array.prototype.quickSort = function quickSort() {
 const arr = [1, -1, 999, 3, 2];
 
 console.log(arr.quickSort());
+console.log(arr);
